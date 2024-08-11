@@ -7,7 +7,7 @@
 The ZBClub Social Media Wall module is designed to aggregate and display social media posts from Facebook platforms on your Drupal website. It allows site administrators to create a dynamic, interactive social media wall that pulls in content from social media page and displays them in a visually appealing manner.
 
 ### Features
-- Aggregate posts from multiple social media platforms.
+- Aggregate posts from facebook social media platforms.
 - Display social media posts in a grid or list format.
 - Customize the appearance of the social media wall using CSS.
 - Configure which social media post to include on the basis of filter by hashtag.
@@ -51,13 +51,16 @@ The module includes permissions to control who can configure the social media wa
 
 This update aligns with the permissions specified in the zbclub_social_media_wall.settings and zbclub_social_media_wall.zbcron routes.
 
-## Custom Development
-
-### Hooks
-The module provides the following hooks for customization:
-- `hook_zbclub_social_media_wall_alter()`: Allows developers to alter the social media wall content before it is rendered.
-
 ## Code Snippet and Explanation
+
+### zbclub_social_media_wall.info.yml
+  Name: Defines the module's name as "ZB Club social media wall."
+  Type: Specifies the type as "module."
+  Description: Briefly describes the module as providing integration with the Facebook Graph API and creating a block for the social media wall.
+  Core Version Requirement: Indicates compatibility with Drupal 9.
+  Libraries: Lists the required libraries, including zbclub_social_media_wall/listing for additional assets.
+
+This file is essential for registering the module in Drupal and ensuring it is recognized and properly categorized in the admin interface.
 
 
 ## Theming
