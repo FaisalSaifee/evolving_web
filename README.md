@@ -62,6 +62,21 @@ This update aligns with the permissions specified in the zbclub_social_media_wal
 
 This file is essential for registering the module in Drupal and ensuring it is recognized and properly categorized in the admin interface.
 
+### zbclub_social_media_wall.module
+
+## Key Functions
+
+### `zbclub_social_media_wall_theme()`
+- **Purpose:** Defines a custom theme hook for the module, specifying the variables that can be used within the theme templates.
+- **Explanation:** This function allows the module to use custom templates for rendering the social media wall block.
+
+### `zbclub_social_media_wall_preprocess_page()`
+- **Purpose:** Preprocesses the page variables for pages with a specific URL pattern (`/zbclub`), attaching necessary libraries and settings.
+- **Explanation:** This function ensures that the required CSS and JavaScript files are loaded on pages where the social media wall is displayed.
+
+## Summary
+This file is responsible for defining custom theming and attaching necessary assets to ensure the ZB Club Social Media Wall is rendered correctly on specified pages. It enhances the module's flexibility and ensures that the correct resources are loaded where needed.
+
 
 ## Theming
 
