@@ -90,6 +90,17 @@ This file is responsible for defining custom theming and attaching necessary ass
 ### Summary
 This file is responsible for defining routes that allow users to access the ZB Club Facebook API settings and execute cron tasks. It ensures that only authorized users can modify the configuration or run scheduled tasks.
 
+### `zbclub_social_media_wall.links.menu.yml`
+
+`zbclub_social_media_wall.settings`
+- **Route Name:** `zbclub_social_media_wall.settings`
+- **Parent:** `sph.admin_config`
+- **Title:** `ZB Club social media wall configuration`
+- **Description:** `Configure ZB Club Social wall Facebook API and other variables related to it.`
+
+### Summary
+This file adds a menu link to the Drupal admin interface under the "sph.admin_config" section. The link leads to the ZB Club Social Media Wall configuration page, where users can set up the Facebook API and related settings.
+
 
 ## Theming
 
