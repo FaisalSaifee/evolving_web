@@ -60,6 +60,7 @@ This update aligns with the permissions specified in the zbclub_social_media_wal
   - **Core Version Requirement:** Indicates compatibility with Drupal 9.
   - **Libraries:** Lists the required libraries, including zbclub_social_media_wall/listing for additional assets.
 
+#### Summary
 This file is essential for registering the module in Drupal and ensuring it is recognized and properly categorized in the admin interface.
 
 ### zbclub_social_media_wall.module
@@ -72,7 +73,7 @@ This file is essential for registering the module in Drupal and ensuring it is r
 - **Purpose:** Preprocesses the page variables for pages with a specific URL pattern (`/zbclub`), attaching necessary libraries and settings.
 - **Explanation:** This function ensures that the required CSS and JavaScript files are loaded on pages where the social media wall is displayed.
 
-### Summary
+#### Summary
 This file is responsible for defining custom theming and attaching necessary assets to ensure the ZB Club Social Media Wall is rendered correctly on specified pages. It enhances the module's flexibility and ensures that the correct resources are loaded where needed.
 
 ### zbclub_social_media_wall.routing.yml
@@ -87,7 +88,7 @@ This file is responsible for defining custom theming and attaching necessary ass
 - **Purpose:** Points to the controller method responsible for executing the cron tasks related to the ZB Club Social Media Wall.
 - **Permissions:** Requires `access content` permission.
 
-### Summary
+#### Summary
 This file is responsible for defining routes that allow users to access the ZB Club Facebook API settings and execute cron tasks. It ensures that only authorized users can modify the configuration or run scheduled tasks.
 
 ### zbclub_social_media_wall.links.menu.yml
@@ -98,7 +99,7 @@ This file is responsible for defining routes that allow users to access the ZB C
 - **Title:** `ZB Club social media wall configuration`
 - **Description:** `Configure ZB Club Social wall Facebook API and other variables related to it.`
 
-### Summary
+#### Summary
 This file adds a menu link to the Drupal admin interface under the "sph.admin_config" section. The link leads to the ZB Club Social Media Wall configuration page, where users can set up the Facebook API and related settings.
 
 ### zbclub_social_media_wall.libraries.yml
@@ -109,7 +110,7 @@ This file adds a menu link to the Drupal admin interface under the "sph.admin_co
 - **CSS:** Includes the `css/listing.css` file under the theme category.
 - **Dependencies:** Specifies `core/jquery` as a dependency, ensuring jQuery is loaded when this library is used.
 
-### Summary
+#### Summary
 This file defines the `listing` library, which includes JavaScript and CSS assets required for the ZB Club Social Media Wall module. It ensures these assets are properly managed and loaded with the necessary dependencies.
 
 ### drush.services.yml
