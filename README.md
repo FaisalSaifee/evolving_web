@@ -123,6 +123,95 @@ This file defines the `listing` library, which includes JavaScript and CSS asset
 #### Summary
 This file registers a custom Drush command for the ZB Club Social Media Wall module, enabling it to perform tasks like interacting with the Facebook API via the command line. The service class is injected with necessary dependencies such as configuration, HTTP client, file system, and logging services.
 
+### ZBClubSocialMediaWallBlock.php
+
+#### Class Definition
+- The `ZBClubSocialMediaWallBlock` class extends `BlockBase` and implements `ContainerFactoryPluginInterface`, allowing it to be used as a block plugin in Drupal.
+
+#### Dependency Injection
+- The class uses dependency injection to access the file system (`FileSystemInterface`) and configuration factory (`ConfigFactoryInterface`), enabling it to manage files and configurations effectively.
+
+#### `build()` Method
+- **Purpose:** Fetches the social media data from a JSON file and prepares it for rendering using a custom theme.
+- **Error Handling:** The method includes error handling to log issues and provide user feedback if data fetching fails.
+
+#### Summary
+This file is crucial for rendering the social media wall block within Drupal. It handles data retrieval, error management, and rendering, making it a core part of the module's functionality.
+
+### ZBClubFacebookApiSettingsForm.php
+
+#### Class Definition
+- The `ZBClubFacebookApiSettingsForm` class extends `ConfigFormBase`, enabling it to handle configuration settings within Drupal.
+
+#### Form Fields
+- **`facebook_api_url`:** Text field for entering the Facebook API endpoint URL.
+- **`page_id`:** Text field for specifying the Facebook page ID to retrieve posts.
+- **`post_variables`:** Text area for entering comma-separated post variables (e.g., `full_picture`, `message`).
+- **`filter_hastag`:** Text field for filtering posts by a specific hashtag.
+
+#### `submitForm()` Method
+- Saves the entered configuration settings when the form is submitted.
+
+#### Summary
+This file is essential for configuring the Facebook API integration in the ZB Club Social Media Wall module. It allows administrators to input and save settings that determine how social media data is fetched and filtered.
+
+### ZbclubFacebookApiController.php
+
+#### Class Definition
+- The `ZbclubFacebookApiController` class extends `ControllerBase` and manages the interaction with the Facebook API.
+
+#### Dependency Injection
+- The class uses dependency injection to access essential services such as the configuration factory (`ConfigFactoryInterface`), HTTP client (`ClientInterface`), file system (`FileSystemInterface`), and logger factory (`LoggerChannelFactoryInterface`).
+
+#### `zbCron()` Method
+- **Purpose:** Executes a cron job that fetches data from the Facebook API, processes the response, and saves the data as a JSON file.
+- **Error Handling:** The method includes error handling to log any issues encountered during the API request or file operations.
+
+#### Summary
+This file is responsible for running a cron job that interacts with the Facebook API to fetch social media data and save it for use within the ZB Club Social Media Wall module. It uses Drupal's services for configuration, HTTP requests, file management, and logging to ensure the process is robust and maintainable.
+
+### ZbclubFacebookApiCommands.php
+
+#### Class Definition
+- The `ZbclubFacebookApiCommands` class extends `DrushCommands`, making it a custom Drush command.
+
+#### Dependency Injection
+- The class is constructed with dependencies such as the configuration factory (`ConfigFactoryInterface`), HTTP client (`ClientInterface`), file system (`FileSystemInterface`), and logger factory (`LoggerChannelFactoryInterface`), which are used in the command execution.
+
+#### `updateZbClubPost()` Method
+- **Purpose:** This method is the core Drush command (`zbclub_social_media_wall:update`) that triggers the `zbCron()` method from the `ZbclubFacebookApiController` class to fetch and update Facebook posts.
+- **Alias:** The command can also be run using the alias `zbsm`.
+
+#### Summary
+This file provides a custom Drush command to manually update the Facebook posts for the ZB Club Social Media Wall module. It leverages dependency injection for configuration, HTTP requests, file management, and logging, ensuring that the update process is smooth and can be managed from the command line.
+
+### listing.js
+
+#### Slider Initialization
+- The script initializes a slider using the Slick library for elements with the class `.js-reader-club-slider`, enabling carousel functionality with custom previous and next arrows.
+
+#### Gallery Interaction
+- The script handles click events on gallery thumbnails (`.js-fb-gallery`) to open an overlay and display the selected image in the slider.
+
+#### Responsive Behavior
+- The script adjusts the slider's behavior based on the window size, ensuring proper display on both desktop and mobile devices.
+
+#### Summary
+This file is responsible for managing the interactive elements of the social media wall, including the image slider and gallery. It enhances user experience by providing smooth navigation and responsive adjustments based on screen size.
+
+### listing.css
+
+#### Gallery and Overlay Styling
+- Styles the elements within the Facebook gallery, including the image container, overlay, and thumbnails.
+- Controls the visibility and positioning of overlays and ensures responsive behavior across different screen sizes.
+
+#### Responsive Adjustments
+- Includes media queries for various breakpoints, adjusting the layout for mobile, tablet, and desktop views.
+- Ensures that elements like headers, footers, and images adapt correctly to different screen sizes.
+
+#### Summary
+This file is responsible for the visual presentation of the social media wall, ensuring a consistent and responsive user experience across devices. It manages the styling of key components like the image gallery and overlay elements.
+
 ## Theming
 
 ### CSS/JS Inclusions
