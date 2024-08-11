@@ -46,8 +46,8 @@ After the ZBClub Social Media Wall module is installed and configured, you need 
 
 ### Permissions
 The module includes permissions to control who can configure the social media wall and who can access its features:
-  -**administer site configuration**: Allows users to configure the ZB Club Facebook API settings.
-  -**access content:** Allows users to access the ZB Club Facebook API Cron endpoint, which is used for managing scheduled tasks related to the social media wall.
+  - **administer site configuration**: Allows users to configure the ZB Club Facebook API settings.
+  - **access content:** Allows users to access the ZB Club Facebook API Cron endpoint, which is used for managing scheduled tasks related to the social media wall.
 
 This update aligns with the permissions specified in the zbclub_social_media_wall.settings and zbclub_social_media_wall.zbcron routes.
 
