@@ -90,7 +90,7 @@ This file is responsible for defining custom theming and attaching necessary ass
 ### Summary
 This file is responsible for defining routes that allow users to access the ZB Club Facebook API settings and execute cron tasks. It ensures that only authorized users can modify the configuration or run scheduled tasks.
 
-### `zbclub_social_media_wall.links.menu.yml`
+### zbclub_social_media_wall.links.menu.yml
 
 `zbclub_social_media_wall.settings`
 - **Route Name:** `zbclub_social_media_wall.settings`
@@ -100,6 +100,17 @@ This file is responsible for defining routes that allow users to access the ZB C
 
 ### Summary
 This file adds a menu link to the Drupal admin interface under the "sph.admin_config" section. The link leads to the ZB Club Social Media Wall configuration page, where users can set up the Facebook API and related settings.
+
+### zbclub_social_media_wall.libraries.yml
+
+`listing`
+- **Version:** `1.x`
+- **JS:** Includes the `js/listing.js` file.
+- **CSS:** Includes the `css/listing.css` file under the theme category.
+- **Dependencies:** Specifies `core/jquery` as a dependency, ensuring jQuery is loaded when this library is used.
+
+## Summary
+This file defines the `listing` library, which includes JavaScript and CSS assets required for the ZB Club Social Media Wall module. It ensures these assets are properly managed and loaded with the necessary dependencies.
 
 
 ## Theming
