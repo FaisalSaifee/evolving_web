@@ -46,7 +46,7 @@ After the ZBClub Social Media Wall module is installed and configured, you need 
 
 ### Permissions
 The module includes permissions to control who can configure the social media wall and who can access its features:
-  - **administer site configuration**: Allows users to configure the ZB Club Facebook API settings.
+  - **administer site configuration:** Allows users to configure the ZB Club Facebook API settings.
   - **access content:** Allows users to access the ZB Club Facebook API Cron endpoint, which is used for managing scheduled tasks related to the social media wall.
 
 This update aligns with the permissions specified in the zbclub_social_media_wall.settings and zbclub_social_media_wall.zbcron routes.
@@ -54,11 +54,11 @@ This update aligns with the permissions specified in the zbclub_social_media_wal
 ## Code Snippet and Explanation
 
 ### zbclub_social_media_wall.info.yml
-  Name: Defines the module's name as "ZB Club social media wall."
-  Type: Specifies the type as "module."
-  Description: Briefly describes the module as providing integration with the Facebook Graph API and creating a block for the social media wall.
-  Core Version Requirement: Indicates compatibility with Drupal 9.
-  Libraries: Lists the required libraries, including zbclub_social_media_wall/listing for additional assets.
+  - **Name:** Defines the module's name as "ZB Club social media wall."
+  - **Type:** Specifies the type as "module."
+  - **Description:** Briefly describes the module as providing integration with the Facebook Graph API and creating a block for the social media wall.
+  - **Core Version Requirement:** Indicates compatibility with Drupal 9.
+  - **Libraries:** Lists the required libraries, including zbclub_social_media_wall/listing for additional assets.
 
 This file is essential for registering the module in Drupal and ensuring it is recognized and properly categorized in the admin interface.
 
