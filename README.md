@@ -51,7 +51,7 @@ The module includes permissions to control who can configure the social media wa
 
 This update aligns with the permissions specified in the zbclub_social_media_wall.settings and zbclub_social_media_wall.zbcron routes.
 
-## Code Snippet and Explanation
+## Code Explanation
 
 ### zbclub_social_media_wall.info.yml
   - **Name:** Defines the module's name as "ZB Club social media wall."
@@ -109,9 +109,18 @@ This file adds a menu link to the Drupal admin interface under the "sph.admin_co
 - **CSS:** Includes the `css/listing.css` file under the theme category.
 - **Dependencies:** Specifies `core/jquery` as a dependency, ensuring jQuery is loaded when this library is used.
 
-## Summary
+### Summary
 This file defines the `listing` library, which includes JavaScript and CSS assets required for the ZB Club Social Media Wall module. It ensures these assets are properly managed and loaded with the necessary dependencies.
 
+### drush.services.yml
+
+`zbclub_social_media_wall.command`
+- **Class:** `Drupal\zbclub_social_media_wall\Commands\ZbclubFacebookApiCommands`
+- **Arguments:** Injects services like `@config.factory`, `@http_client`, `@file_system`, and `@logger.factory` into the command class.
+- **Tags:** Registers the service as a Drush command using the `drush.command` tag.
+
+#### Summary
+This file registers a custom Drush command for the ZB Club Social Media Wall module, enabling it to perform tasks like interacting with the Facebook API via the command line. The service class is injected with necessary dependencies such as configuration, HTTP client, file system, and logging services.
 
 ## Theming
 
