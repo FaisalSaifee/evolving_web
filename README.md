@@ -132,6 +132,24 @@ This file registers a custom Drush command for the ZB Club Social Media Wall mod
 ### Templates
 - The module provides templates for customizing the display of individual posts. These can be overridden in your theme by copying the template files to your theme's directory.
 
+### zbclub-social-media-wall-block.html.twig
+
+#### Container Structure
+- The template begins with a `<div class="wrap">` which encapsulates the entire content of the social media wall block.
+
+#### Main Content Section
+- The primary content is structured within a `<section>` and `<div class="container">` that defines the layout, with rows and columns for responsive design.
+
+#### Dynamic Content Rendering
+- The template includes logic to loop through the `content.posts.data` array and display posts that match specific filters. Only posts with images and specific keywords are rendered.
+
+#### Overlay Elements
+- The template includes overlay elements that display additional information about each post, such as the post message, creation time, and reaction count.
+
+#### Summary
+This Twig template is used to structure and display the social media posts fetched by the module. It handles both the layout and the conditional rendering of posts, ensuring that only relevant content is shown to the users in a visually appealing manner.
+
+
 ## Troubleshooting
 
 ### Common Issues
