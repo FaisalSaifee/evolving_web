@@ -64,11 +64,11 @@ This file is essential for registering the module in Drupal and ensuring it is r
 
 ### zbclub_social_media_wall.module
 
-### `zbclub_social_media_wall_theme()`
+`zbclub_social_media_wall_theme()`
 - **Purpose:** Defines a custom theme hook for the module, specifying the variables that can be used within the theme templates.
 - **Explanation:** This function allows the module to use custom templates for rendering the social media wall block.
 
-### `zbclub_social_media_wall_preprocess_page()`
+`zbclub_social_media_wall_preprocess_page()`
 - **Purpose:** Preprocesses the page variables for pages with a specific URL pattern (`/zbclub`), attaching necessary libraries and settings.
 - **Explanation:** This function ensures that the required CSS and JavaScript files are loaded on pages where the social media wall is displayed.
 
@@ -77,12 +77,12 @@ This file is responsible for defining custom theming and attaching necessary ass
 
 ### zbclub_social_media_wall.routing.yml
 
-### `zbclub_social_media_wall.settings`
+`zbclub_social_media_wall.settings`
 - **Path:** `/admin/config/zbclub_facebook_api`
 - **Purpose:** Points to the settings form for configuring the ZB Club Facebook API integration.
 - **Permissions:** Requires `administer site configuration` permission.
 
-### `zbclub_social_media_wall.zbcron`
+`zbclub_social_media_wall.zbcron`
 - **Path:** `/zbclub-social-media-wall/zbcron`
 - **Purpose:** Points to the controller method responsible for executing the cron tasks related to the ZB Club Social Media Wall.
 - **Permissions:** Requires `access content` permission.
