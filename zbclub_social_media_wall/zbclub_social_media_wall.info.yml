@@ -1,0 +1,7 @@
+name: ZB Club social media wall
+type: module
+description: 'Provides integration with the Facebook Graph API and creates block for ZB club social media wall'
+package: Custom
+core_version_requirement: ^9
+libraries:
+  - zbclub_social_media_wall/listing

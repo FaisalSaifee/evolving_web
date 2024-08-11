@@ -1,0 +1,6 @@
+services:
+  zbclub_social_media_wall.command:
+    class: Drupal\zbclub_social_media_wall\Commands\ZbclubFacebookApiCommands
+    arguments: ['@config.factory', '@http_client', '@file_system', '@logger.factory']
+    tags:
+      -  { name: drush.command }

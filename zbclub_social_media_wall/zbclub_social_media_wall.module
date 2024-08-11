@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains zbclub_social_media_wall.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function zbclub_social_media_wall_theme() {
+  return [
+    'zbclub_social_media_wall_block' => [
+      'variables' => [
+        'content' => [],
+        'filter' => [],
+        'modulepath' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function zbclub_social_media_wall_preprocess_page(&$variables) {
+  $current_url = \Drupal::request()->getRequestUri();
+  if (strpos($current_url, '/zbclub') !== FALSE) {
+    $module_path = drupal_get_path('module', 'zbclub_social_media_wall');
+    $variables['#attached']['library'][] = 'zbclub_social_media_wall/listing';
+    $variables['#attached']['drupalSettings']['modulePath'] = '/' . $module_path;
+  }
+}

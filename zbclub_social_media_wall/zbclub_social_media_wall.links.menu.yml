@@ -1,0 +1,5 @@
+zbclub_social_media_wall.settings:
+  route_name: zbclub_social_media_wall.settings
+  parent: sph.admin_config
+  title: ZB Club social media wall configuration
+  description: 'Configure ZB Club Socal wall facebook api and other variables related to it.'

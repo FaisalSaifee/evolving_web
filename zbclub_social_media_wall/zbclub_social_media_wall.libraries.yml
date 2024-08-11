@@ -1,0 +1,9 @@
+listing:
+  version: 1.x
+  js:
+    js/listing.js: {}
+  css:
+    theme:
+      css/listing.css: {}
+  dependencies:
+    - core/jquery

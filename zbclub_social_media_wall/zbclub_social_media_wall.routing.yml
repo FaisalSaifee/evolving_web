@@ -1,0 +1,14 @@
+zbclub_social_media_wall.settings:
+  path: '/admin/config/zbclub_facebook_api'
+  defaults:
+    _form: '\Drupal\zbclub_social_media_wall\Form\ZBClubFacebookApiSettingsForm'
+    _title: 'ZB Club Facebook API Settings'
+  requirements:
+    _permission: 'administer site configuration'
+zbclub_social_media_wall.zbcron:
+  path: '/zbclub-social-media-wall/zbcron'
+  defaults:
+    _controller: '\Drupal\zbclub_social_media_wall\Controller\ZbclubFacebookApiController::zbCron'
+    _title: 'ZB Club Facebook API Cron'
+  requirements:
+    _permission: 'access content'

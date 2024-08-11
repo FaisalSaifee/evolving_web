@@ -1,0 +1,154 @@
+<div class="wrap">
+
+	<main
+		class="main">
+
+		<!-- section - START-->
+		<section class="sec readers-club-activites">
+			<div class="container">
+				<div class="row">
+					<div
+						class="col-md-12">
+						<!-- content-primary - START-->
+						<div
+							class="content content-primary">
+							<!-- group - START-->
+							<div
+								class="group">
+								<!-- heading-border - START-->
+								<div class="heading-border heading-border-primary fit">
+									<div class="container-fluid">
+										<div class="row align-items-center">
+											<div class="col">
+												<a class="heading-border-mainlink" href="https://www.facebook.com/ZaobaoClub">
+													<h2>早报俱乐部官方脸书网页</h2>
+												</a>
+											</div>
+											<div class="col col-auto">
+												<div class="heading-border-right">
+													<div class="heading-border-right-content">
+														<a class="heading-border-mainlink load-more" href="https://www.facebook.com/ZaobaoClub" id="facebook-gallery">
+															<span>更多<i class="fas fa-chevron-right"></i>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="divider"></div>
+									</div>
+								</div>
+								<!-- heading-border - END-->
+								{% if content is not empty %}
+								<ul class="article-list article-fb-list row no-gutters">
+									{% set count = 0 %}
+									{% for post in content.posts.data %}
+										{% if post.full_picture %}
+											{# Filtering post with images only #}
+											{% if filter in post.message %}
+											{# Filtering post with hashtag #}
+												{% if count < 8 %}
+													{% if count < 6 %}
+														<li class="col-4 col-md-3">
+													{% else %}
+														<li class="col-4 col-md-3 d-none d-md-block d-lg-block d-xl-block">
+													{% endif %}
+														<a class="js-fb-gallery" href="#" data-id="{{count}}" style="background-image: url({{ post.full_picture }});">
+															{% if post.attachments %}
+																<div class="icon-container">
+																	<img src="{{ modulepath}}/images/icon/gallery-icon.svg">
+																</div>
+															{% endif %}
+														</a>
+														</li>
+														{% set count = count + 1 %}
+												{% endif %}
+											{% endif %}
+										{% endif %}
+									{% endfor %}
+								</ul>
+								{% else %}
+									<p>No data available.</p>
+								{% endif %}
+							</div>
+							<!-- group - END-->
+						</div>
+						<!-- content-primary - END-->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- section - END-->
+
+		<!-- overlay - START-->
+		<div class="overlay js-overlay overlay-fb-gallery">
+			<div class="overlay-bg overlay-bg-grey"></div>
+			<div class="flex-center-v h-full">
+				<div class="flex-center-v-content">
+					<div class="overlay-wrap">
+						<div class="cancel"></div>
+						<!-- FB-GALLERY-->
+						{% if content is not empty %}
+						<div class="overlay-content js-reader-club-slider">
+						{% set count = 0 %}
+						{% for post in content.posts.data %}
+							{% if post.full_picture %}
+							{# Filtering post with images only #}
+								{% if filter in post.message %}
+								{# Filtering post with hashtag #}
+									{% if count < 8 %}
+										<div class="overlay-content-container desktop" id="{{count}}">
+											<div class="overlay-image-container">
+												<img src="{{ post.full_picture }}"/>
+												{% if post.attachments %}
+													{% for attachment in post.attachments.data %}
+														{% if attachment.subattachments %}
+															<div class="overlay-thumbnails-container">
+																<div class="overlay-thumbnails">
+																	{% for subattachment in attachment.subattachments.data %}
+																		<a class="thumbnail is-active" href="" style="background-image: url({{ subattachment.media.image.src }});"></a>
+																	{% endfor %}
+																</div>
+															</div>
+														{% endif %}
+													{% endfor %}
+												{% endif %}
+											</div>
+											<div class="overlay-text-container">
+												<div class="overlay-text-header d-flex align-items-center justify-content-between">
+													<div class="logo d-flex align-items-center"><img src="{{ modulepath}}/images/logo/readerclub-logo.png"/>
+														<p>早报俱乐部</p>
+													</div>
+													<div class="logo-holder"><a href="{{ post.permalink_url }}" target="_blank"><img src="{{ modulepath}}/images/logo/fb-logo-grey.svg"/></a></div>
+												</div>
+												<div class="overlay-text-description">
+													<p>{{ post.message }}</p>
+												</div>
+												<div class="overlay-footer d-flex align-items-center justify-content-between">
+													<div class="d-flex align-items-center">
+														<div class="logo-holder"><img src="{{ modulepath}}/images/icon/time-icon.svg"/></div>
+														<p class="mb-0 ml-2">{{ post.created_time|date("d F Y") }}</p>
+													</div>
+													<div class="d-flex align-items-center">
+														<div class="logo-holder mr-2"><img src="{{ modulepath}}/images/icon/like-icon.svg"/></div>
+														<p class="mb-0">{{ post.reactions.summary.total_count }}</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										{% set count = count + 1 %}
+									{% endif %}
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+						</div>
+						{% endif %}
+						<!-- FB-GALLERY-END-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- overlay - END-->
+	</main>
+
+</div>
